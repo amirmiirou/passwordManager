@@ -17,7 +17,7 @@ const con=mysql.createConnection({host : "localhost",user : "test",password : "r
 
 
 app.get("/",(req,res)=>{
-con.connect((err,result)=>{if(err)throw err;res.send(result)})
+con.connect((err,result)=>{if(err){res.send(err)}else{res.send(result)} })
 //con.query("select * from manager",(err,result)=>{res.send(result)})
 
 
