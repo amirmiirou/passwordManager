@@ -10,7 +10,7 @@ app.use(cors({origin : "http://localhost:3000"}))
 app.use(express.json())
 //=mysql.createConnection()
 
-const con=mysql.createPool({host : "localhost",user : "test",password : "root",database : "passwordmanager"})
+const con=mysql.createConnection({host : "localhost",user : "test",password : "root",database : "passwordmanager"})
 
 
 
