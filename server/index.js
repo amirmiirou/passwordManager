@@ -8,15 +8,15 @@ const {encrypt,decrypt}=require("./password")
 const server=http.createServer(app)
 app.use(cors({origin : "http://localhost:3000"}))
 app.use(express.json())
-//let con=mysql.createConnection({host : "localhost",user : "root",password : "",database : "passwordmanager"})
-//con.connect()
+let con=mysql.createConnection({host : process.env.host,user : process.env.usename,password : process.env.password,database : process.env.database})
+con.connect()
 
 
 
 app.get("/",(req,res)=>{res.send("server running")})
 
 
-/*
+
 app.post("/register",(req,res)=>{
 
    let x= encrypt({password : req.body.password})
@@ -55,7 +55,7 @@ app.get("/getList",(req,res)=>{
         })
 
 
-})*/
+})
 
 
 app.listen(3001,()=>{console.log("i am listening")})
