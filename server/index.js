@@ -15,6 +15,8 @@ con.connect()
 
 app.get("/",(req,res)=>{res.send("server running")})
 
+app.get("/test",(req,res)=>{res.send("hello")})
+
 
 
 app.post("/register",(req,res)=>{
