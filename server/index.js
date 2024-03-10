@@ -10,14 +10,14 @@ app.use(cors({origin : "http://localhost:3000"}))
 app.use(express.json())
 //=mysql.createConnection()
 
-const con=mysql.createPool({host : "localhost",user : "test",password : "root",database : "passwordmanager"})
+const con=mysql.createConnection({host : "localhost",user : "test",password : "root",database : "passwordmanager"})
 
 
 
 
 
 app.get("/",(req,res)=>{
-con.getConnection((err,result)=>{if(err){res.send(err)}else{res.send(result)} })
+con.connect((err,result)=>{if(err){res.send(err)}else{res.send(result)} })
 //con.query("select * from manager",(err,result)=>{res.send(result)})
 
 
