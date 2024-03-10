@@ -16,7 +16,13 @@ const con=mysql.createPool({host : "localhost",user : "test",password : "root",d
 
 
 
-app.get("/",(req,res)=>{res.send(process.env.DB_HOST)})
+app.get("/",(req,res)=>{
+
+con.query("select * from manager",(err,result)=>{res.send(result)})
+
+
+
+})
 
 app.get("/test",(req,res)=>{res.send("hello")})
 
