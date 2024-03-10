@@ -11,6 +11,12 @@ app.use(express.json())
 let con=mysql.createConnection({host : "localhost",user : "root",password : "",database : "passwordmanager"})
 con.connect()
 
+
+
+app.get("/",(req,res)=>{res.send("server running")})
+
+
+
 app.post("/register",(req,res)=>{
 
    let x= encrypt({password : req.body.password})
