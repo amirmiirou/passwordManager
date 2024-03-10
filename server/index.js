@@ -8,12 +8,15 @@ const {encrypt,decrypt}=require("./password")
 const server=http.createServer(app)
 app.use(cors({origin : "http://localhost:3000"}))
 app.use(express.json())
-const con=mysql.createConnection({host : "localhost",user : "test",password : "root",database : "passwordmanager"})
-con.connect()
+//=mysql.createConnection()
+
+const con=mysql.createPool({host : "localhost",user : "test",password : "root",database : "passwordmanager"})
 
 
 
-app.get("/",(req,res)=>{res.send("server running")})
+
+
+app.get("/",(req,res)=>{res.send(process.env.DB_HOST)})
 
 app.get("/test",(req,res)=>{res.send("hello")})
 
