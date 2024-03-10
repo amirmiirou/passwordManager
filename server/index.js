@@ -8,7 +8,7 @@ const {encrypt,decrypt}=require("./password")
 const server=http.createServer(app)
 app.use(cors({origin : "http://localhost:3000"}))
 app.use(express.json())
-let con=mysql.createConnection({host : process.env.host,user : process.env.usename,password : process.env.password,database : process.env.database})
+let con=mysql.createConnection({host : process.env.host,user : process.env.username,password : process.env.password,database : process.env.database})
 con.connect()
 
 
