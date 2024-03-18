@@ -6,7 +6,7 @@ const cors=require("cors")
 const app=express()
 const {encrypt,decrypt}=require("./password")
 const server=http.createServer(app)
-app.use(cors({origin : "https://password-manager-client-one.vercel.app/"}))
+app.use(cors({origin : "https://password-manager-client-one.vercel.app"}))
 app.use(express.json())
 //=mysql.createConnection()
 
