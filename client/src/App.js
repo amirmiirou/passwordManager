@@ -31,7 +31,7 @@ if(list===null){
 <input className='w-3/4 h-10 rounded-lg' type="text" placeholder='Ex. password123' onChange={(e)=>{setPassword(e.target.value)}} />
 <input className='w-3/4 h-10 rounded-lg' type="text" placeholder='Ex. LinkedIn'  onChange={(e)=>{setForAccount(e.target.value)}}/>
 <button className='bg-slate-200 rounded-lg w-3/4 h-10' onClick={()=>{axios.post("https://password-manager-server-cyan.vercel.app/register",{name : account,password : password}).then((result)=>{
-
+setList(Object.values(result.data))
 })}}>save</button>
 </div>
 
